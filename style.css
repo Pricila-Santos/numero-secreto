@@ -22,6 +22,11 @@ h1 {
     font-size: 5em;
 }
 
+h2 {
+    font-size: 4em;
+    color: red;
+    
+}
 h3 {
     font-size: 2em;
     margin-top: 20px;
