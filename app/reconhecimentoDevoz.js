@@ -19,7 +19,11 @@ function exibeChuteNaTela(chute) {
     elementoChute.innerHTML = `
     <div>Você disse</div>
     <span class="box">${chute}</span>
+
+      `
     
-    
-    `
 }
+
+//quando ele acabar, eu quero fazer alguma coisa.Recognition.start(), ou seja, quando a nossa função acabar, ele liga mais uma vez o reconhecimento de voz
+recognition.addEventListener('end', () => recognition.start())
+

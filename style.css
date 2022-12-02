@@ -52,3 +52,13 @@ svg {
     
     
 }
+.btn-jogar{
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: var(--primaria);
+    
+    
+    
+}

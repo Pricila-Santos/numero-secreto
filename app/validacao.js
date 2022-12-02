@@ -2,14 +2,21 @@ function verificaChuteValido(chute) {
    const numero = +chute
    if(chuteinvalido(numero)) {
     elementoChute.innerHTML+='<div>Inválido</div>'
+
+    return
    }
    if (numeroForaDoPermitido(numero)) {
     elementoChute.innerHTML+=`<div>Inválido : Fale o número entre ${menorValor} e ${maiorValor}</div>`
+
+    return
    }
    if (numero === numeroSecreto) {
     document.body.innerHTML = `
     <h2>Você acertou ! Parabéns </h2>
-    <h3>O número secreto era ${numeroSecreto}</h3>    `
+    <h3>O número secreto era ${numeroSecreto}</h3>   
+      <button id="jogar-novamente"class="btn-jogar">Jogar Novamente </button>
+
+     `
    
   } else if (numero > numeroSecreto) {
     elementoChute.innerHTML += `
@@ -32,3 +39,12 @@ function chuteinvalido(numero) {
 function numeroForaDoPermitido(numero) {
         return numero > maiorValor || numero < menorValor
     }
+
+    document.body.addEventListener('click', e => {
+      if(e.target.id =='jogar-novamente') {
+        window.location.reload()
+      }//então, quando eu clicar, eu quero que alguma coisa aconteça. Vou utilizar um evento, e embaixo vamos colocar as nossas funções, então vou falar que se eu tiver um clique no botão “Jogar novamente”, como eu consigo acessar aquele botão? Posso usar if (e.target.id == ‘jogar-novamente’) {, então, se eu tiver um clique no ID que seja igual ao jogar-novamente, eu quero reiniciar a minha tela, então, eu coloco window.location.reload().
+    })
+
+    
+  
